@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{ % block title % }{{phone.name}}{ % endblock % }
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "{{ phone.name }}",
+        "image": "https://yourmobileshop.com/static/images/{{ phone.image }}",
+        "description": "{{ phone.name }} with {{ phone.specs.display }} display, {{ phone.specs.camera }} camera",
+        "brand": {
+            "@type": "Brand",
+            "name": "{{ phone.brand_name }}"
+        },
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "{{ phone.price }}",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+                "@type": "Organization",
+                "name": "Mobile Shop"
+            }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "{{ phone.rating }}",
+            "reviewCount": "{{ phone.review_count }}"
+        }
+    }
+    </script>
+    {% block content %}
+<div class="bg-white rounded-lg shadow-md p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+            <img src="/static/images/{{ phone.image }}" alt="{{ phone.name }}" class="w-full rounded-lg">
+        </div>
+        
+        <div class="space-y-4">
+            <h1 class="text-3xl font-bold">{{ phone.name }}</h1>
+            <p class="text-2xl text-blue-600">${{ "%.2f"|format(phone.price) }}</p>
+            
+            <div class="space-y-4">
+                <h2 class="text-xl font-semibold">Specifications</h2>
+                <div class="space-y-2">
+                    {% for key, value in phone.specs.items() %}
+                    <div class="grid grid-cols-2">
+                        <span class="text-gray-600">{{ key|title }}</span>
+                        <span>{{ value }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <button class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}
