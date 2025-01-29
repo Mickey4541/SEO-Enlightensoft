@@ -3,7 +3,14 @@ brands_db = [
     {"id": "apple", "name": "Apple", "logo": "apple-logo.png"},
     {"id": "xiaomi", "name": "Xiaomi", "logo": "xiaomi-logo.png"},
     {"id": "oneplus", "name": "OnePlus", "logo": "oneplus-logo.png"},
-    {"id": "google", "name": "Google", "logo": "google-logo.png"}
+    {"id": "google", "name": "Google", "logo": "google-logo.png"},
+    
+    # Laptop brands
+    {"id": "dell", "name": "Dell", "logo": "dell-logo.png"},
+    {"id": "hp", "name": "HP", "logo": "hp-logo.png"},
+    {"id": "lenovo", "name": "Lenovo", "logo": "lenovo-logo.png"},
+    {"id": "asus", "name": "Asus", "logo": "asus-logo.png"},
+    {"id": "acer", "name": "Acer", "logo": "acer-logo.png"}
 ]
 
 phones_db = [
@@ -86,10 +93,181 @@ phones_db = [
             "camera": "50MP + 48MP + 48MP",
             "battery": "5050mAh"
         }
+    },
+    {
+        "id": "google-pixel-8-pro",
+        "brand_id": "google",
+        "name": "Google Pixel 8 Pro",
+        "price": 999.99,
+        "featured": False,
+        "image": "pixel-8-pro.jpg",
+        "specs": {
+            "display": "6.7-inch LTPO OLED",
+            "processor": "Tensor G3",
+            "ram": "12GB",
+            "storage": "128GB/256GB/512GB",
+            "camera": "50MP + 48MP + 48MP",
+            "battery": "5050mAh"
+        }
+    },
+    {
+        "id": "google-pixel-8-pro",
+        "brand_id": "google",
+        "name": "Google Pixel 8 Pro",
+        "price": 999.99,
+        "featured": False,
+        "image": "pixel-8-pro.jpg",
+        "specs": {
+            "display": "6.7-inch LTPO OLED",
+            "processor": "Tensor G3",
+            "ram": "12GB",
+            "storage": "128GB/256GB/512GB",
+            "camera": "50MP + 48MP + 48MP",
+            "battery": "5050mAh"
+        }
+    },
+    {
+        "id": "google-pixel-8-pro",
+        "brand_id": "google",
+        "name": "Google Pixel 8 Pro",
+        "price": 999.99,
+        "featured": False,
+        "image": "pixel-8-pro.jpg",
+        "specs": {
+            "display": "6.7-inch LTPO OLED",
+            "processor": "Tensor G3",
+            "ram": "12GB",
+            "storage": "128GB/256GB/512GB",
+            "camera": "50MP + 48MP + 48MP",
+            "battery": "5050mAh"
+        }
     }
 ]
 
 
+
+laptops_db = [
+    {
+        "id": "macbook-pro-16-m3",
+        "brand_id": "apple",
+        "name": "MacBook Pro 16 (M3)",
+        "price": 2499.99,
+        "featured": True,
+        "image": "https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?cs=srgb&dl=pexels-craigmdennis-205421.jpg&fm=jpg",
+        "specs": {
+            "display": "16.2-inch Liquid Retina XDR",
+            "processor": "Apple M3 Pro",
+            "ram": "16GB/32GB/64GB",
+            "storage": "512GB/1TB/2TB/4TB/8TB",
+            "battery": "22 hours"
+        }
+    },
+    {
+        "id": "dell-xps-15-9530",
+        "brand_id": "dell",
+        "name": "Dell XPS 15 (9530)",
+        "price": 1999.99,
+        "featured": True,
+        "image": "https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?cs=srgb&dl=pexels-craigmdennis-205421.jpg&fm=jpg",
+        "specs": {
+            "display": "15.6-inch 3.5K OLED",
+            "processor": "Intel Core i7-13700H",
+            "ram": "16GB/32GB/64GB",
+            "storage": "512GB/1TB/2TB/4TB",
+            "battery": "86Wh"
+        }
+    },
+    {
+        "id": "asus-rog-zephyrus-g14",
+        "brand_id": "asus",
+        "name": "Asus ROG Zephyrus G14",
+        "price": 1899.99,
+        "featured": False,
+        "image": "https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?cs=srgb&dl=pexels-craigmdennis-205421.jpg&fm=jpg",
+        "specs": {
+            "display": "14-inch Mini LED 165Hz",
+            "processor": "AMD Ryzen 9 7940HS",
+            "ram": "16GB/32GB/64GB",
+            "storage": "1TB/2TB",
+            "battery": "76Wh"
+        }
+    },
+    {
+        "id": "lenovo-legion-7i",
+        "brand_id": "lenovo",
+        "name": "Lenovo Legion 7i",
+        "price": 2199.99,
+        "featured": True,
+        "image": "https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?cs=srgb&dl=pexels-craigmdennis-205421.jpg&fm=jpg",
+        "specs": {
+            "display": "16-inch WQXGA 240Hz",
+            "processor": "Intel Core i9-13900HX",
+            "ram": "16GB/32GB/64GB",
+            "storage": "512GB/1TB/2TB",
+            "battery": "99.9Wh"
+        }
+    },
+    {
+        "id": "hp-spectre-x360-14",
+        "brand_id": "hp",
+        "name": "HP Spectre x360 14",
+        "price": 1799.99,
+        "featured": False,
+        "image": "https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?cs=srgb&dl=pexels-craigmdennis-205421.jpg&fm=jpg",
+        "specs": {
+            "display": "13.5-inch OLED 3K",
+            "processor": "Intel Core i7-1365U",
+            "ram": "16GB/32GB",
+            "storage": "512GB/1TB/2TB",
+            "battery": "66Wh"
+        }
+    },
+    {
+        "id": "acer",
+        "brand_id": "acer",
+        "name": "Acer Spectre x360 14",
+        "price": 1 ,
+        "featured": False,
+        "image": "https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?cs=srgb&dl=pexels-craigmdennis-205421.jpg&fm=jpg",
+        "specs": {
+            "display": "13.5-inch OLED 3K",
+            "processor": "Intel Core i7-1365U",
+            "ram": "16GB/32GB",
+            "storage": "512GB/1TB/2TB",
+            "battery": "66Wh"
+        }
+    },
+    {
+        "id": "acer",
+        "brand_id": "acer",
+        "name": "Acer Spectre x360 14",
+        "price": 1 ,
+        "featured": False,
+        "image": "https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?cs=srgb&dl=pexels-craigmdennis-205421.jpg&fm=jpg",
+        "specs": {
+            "display": "13.5-inch OLED 3K",
+            "processor": "Intel Core i7-1365U",
+            "ram": "16GB/32GB",
+            "storage": "512GB/1TB/2TB",
+            "battery": "66Wh"
+        }
+    },
+    {
+        "id": "acer",
+        "brand_id": "acer",
+        "name": "Acer Spectre x360 14",
+        "price": 1 ,
+        "featured": False,
+        "image": "https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?cs=srgb&dl=pexels-craigmdennis-205421.jpg&fm=jpg",
+        "specs": {
+            "display": "13.5-inch OLED 3K",
+            "processor": "Intel Core i7-1365U",
+            "ram": "16GB/32GB",
+            "storage": "512GB/1TB/2TB",
+            "battery": "66Wh"
+        }
+    }
+]
 
 
 

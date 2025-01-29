@@ -1,30 +1,53 @@
 from fastapi import FastAPI, Request, Response
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-from database import phones_db, brands_db
+from database import phones_db, brands_db, laptops_db
 from datetime import datetime
 
 app = FastAPI()
-
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
+
+
+
+
+
 
 @app.get("/")
 async def home(request: Request):
     featured_phones = [phone for phone in phones_db if phone["featured"]]
+    featured_laptops = [laptop for laptop in laptops_db if laptop["featured"]]
+
     return templates.TemplateResponse(
         "home.html",
-        {"request": request, "featured_phones": featured_phones, "brands": brands_db}
+        {
+            "request": request,
+            "featured_phones": featured_phones,
+            "featured_laptops": featured_laptops,
+            "brands": brands_db,
+        }
     )
 
+
 @app.get("/brand/{brand_id}")
-async def brand_phones(request: Request, brand_id: str):
+async def brand_products(request: Request, brand_id: str):
     brand = next((b for b in brands_db if b["id"] == brand_id), None)
     brand_phones = [phone for phone in phones_db if phone["brand_id"] == brand_id]
+    brand_laptops = [laptop for laptop in laptops_db if laptop["brand_id"] == brand_id]
+
     return templates.TemplateResponse(
-        "brand_phones.html",
-        {"request": request, "brand": brand, "phones": brand_phones}
+        "brand_products.html",  # Renamed template to reflect both phones & laptops
+        {
+            "request": request,
+            "brand": brand,
+            "phones": brand_phones,
+            "laptops": brand_laptops,
+        }
     )
+
+
+
+
 
 @app.get("/phone/{phone_id}")
 async def phone_detail(request: Request, phone_id: str):
@@ -35,13 +58,57 @@ async def phone_detail(request: Request, phone_id: str):
     )
 
 
+#laptops details page
+@app.get("/laptop/{laptop_id}")
+async def laptop_detail(request: Request, laptop_id: str):
+    laptop = next((l for l in laptops_db if l["id"] == laptop_id), None)
+    return templates.TemplateResponse(
+        "laptop_details.html",
+        {"request": request, "laptop": laptop}
+    )
 
 
-@app.get("/phones/")
+
+#phones page
+@app.get("/phones")
 async def phones(request: Request):
     return templates.TemplateResponse(
         "phones.html",
         {"request": request, "phones": phones_db}
+    )
+
+
+#laptops page
+@app.get("/laptops")
+async def phones(request: Request):
+    return templates.TemplateResponse(
+        "laptops.html",
+        {"request": request, "laptops": laptops_db}
+    )
+
+
+@app.get("/contact")
+async def phones(request: Request):
+    return templates.TemplateResponse(
+        "contact.html",
+        {"request": request, "laptops": laptops_db}
+    )
+
+
+
+@app.get("/about")
+async def phones(request: Request):
+    return templates.TemplateResponse(
+        "about.html",
+        {"request": request, "laptops": laptops_db}
+    )
+
+
+@app.get("/privacy")
+async def phones(request: Request):
+    return templates.TemplateResponse(
+        "privacy.html",
+        {"request": request, "laptops": laptops_db}
     )
 
 
@@ -81,6 +148,13 @@ async def sitemap():
     xml_content += "</urlset>"
 
     return Response(content=xml_content, media_type="application/xml")
+
+
+
+
+
+
+
 
 
 #Robots file:::::::::::::::::::

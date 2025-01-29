@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
-    <nav class="bg-white shadow-lg">
+    <nav class="bg-blue-800 text-white shadow-lg">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between h-16">
                 <!-- Logo Section -->
@@ -20,19 +20,45 @@
                 
                 <!-- Navigation Links -->
                 <div class="flex space-x-8 items-center">
-                    <a href="/" class="text-gray-700 hover:text-blue-500 font-medium">Home</a>
-                    <a href="/phones" class="text-gray-700 hover:text-blue-500 font-medium">Phones</a>
-                    <a href="/laptops" class="text-gray-700 hover:text-blue-500 font-medium">Laptops</a>
-                    <a href="/about-us" class="text-gray-700 hover:text-blue-500 font-medium">About Us</a>
-                    <a href="/contact-us" class="text-gray-700 hover:text-blue-500 font-medium">Contact Us</a>
+                    <a href="/" class="text-white hover:text-blue-500 font-medium">Home</a>
+                    <a href="/phones" class="text-white hover:text-blue-500 font-medium">Phones</a>
+                    <a href="/laptops" class="text-white hover:text-blue-500 font-medium">Laptops</a>
+                    
                 </div>
             </div>
         </div>
     </nav>
     
     
+    
     <main class="max-w-7xl mx-auto px-4 py-8">
         {% block content %}{% endblock %}
     </main>
+
+
+
+
+
+
+    <Footer class="bg-black text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <!-- Logo Section -->
+                <div class="flex">
+                    <a href="/" class="flex items-center">
+                        <span class="text-xl font-bold">Mobile Shop</span>
+                    </a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="flex space-x-8 items-center text-white">
+                    <a href="/privacy" class="text-white hover:text-blue-500 font-medium">privacy</a>
+                    <a href="/contact" class="text-white hover:text-blue-500 font-medium">contact</a>
+                    <a href="/about" class="text-white hover:text-blue-500 font-medium">About</a>
+                    
+                </div>
+            </div>
+        </div>
+    </Footer>
 </body>
 </html>
